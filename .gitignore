@@ -4,6 +4,8 @@
 *.xlsx
 *.xls
 
+!PWC. Шаблоны входа робота.xlsx
+
 RbaAuditLibrary/.vs
 RbaAuditLibrary/RbaAuditLibrary/bin
 RbaAuditLibrary/RbaAuditLibrary/obj
