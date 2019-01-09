@@ -112,9 +112,9 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Sequence">
-                      <Sequence DisplayName="InputValuesInBrower">
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Airline'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                    <Sequence DisplayName="Sequence" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                      <Sequence DisplayName="InputValuesInBrower" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Airline'" sap2010:WorkflowViewState.IdRef="Click_28" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -128,17 +128,15 @@
                           <ui:Click.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3c1b150060c3fb839f49fd9455629d01" Selector="&lt;webctrl parentid='aviacompany_chosen' tag='SPAN' /&gt;" WaitForReady="COMPLETE" />
                           </ui:Click.Target>
-                          <sap2010:WorkflowViewState.IdRef>Click_28</sap2010:WorkflowViewState.IdRef>
                         </ui:Click>
-                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Airline'" EmptyField="True" SendWindowMessages="False" SimulateType="False" Text="[&quot; &quot; + row(0).ToString  + “[k(enter)]”]">
+                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Airline'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_17" SendWindowMessages="False" SimulateType="False" Text="[&quot; &quot; + row(0).ToString  + “[k(enter)]”]">
                           <ui:TypeInto.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e6ef88ca3a16cf70cbf5ab2f6c97d848" Selector="&lt;webctrl parentid='aviacompany_chosen' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE" />
                           </ui:TypeInto.Target>
-                          <sap2010:WorkflowViewState.IdRef>TypeInto_17</sap2010:WorkflowViewState.IdRef>
                         </ui:TypeInto>
-                        <If Condition="[row(3).ToString.Equals(&quot;Да&quot;)]" DisplayName="Two-way or not">
+                        <If Condition="[row(3).ToString.Equals(&quot;Да&quot;)]" DisplayName="Two-way or not" sap2010:WorkflowViewState.IdRef="If_10">
                           <If.Then>
-                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  roundTrip1Label'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  roundTrip1Label'" sap2010:WorkflowViewState.IdRef="Click_29" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -152,11 +150,10 @@
                               <ui:Click.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="192a2a4195f442c0dc017b5b22761399" Selector="&lt;webctrl id='roundTrip1Label' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
                               </ui:Click.Target>
-                              <sap2010:WorkflowViewState.IdRef>Click_29</sap2010:WorkflowViewState.IdRef>
                             </ui:Click>
                           </If.Then>
                           <If.Else>
-                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  roundTrip0Label'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  roundTrip0Label'" sap2010:WorkflowViewState.IdRef="Click_30" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -170,88 +167,12 @@
                               <ui:Click.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="fbb1369c3ecdc2def5f47df350d36dd0" Selector="&lt;webctrl id='roundTrip0Label' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
                               </ui:Click.Target>
-                              <sap2010:WorkflowViewState.IdRef>Click_30</sap2010:WorkflowViewState.IdRef>
                             </ui:Click>
                           </If.Else>
-                          <sap2010:WorkflowViewState.IdRef>If_10</sap2010:WorkflowViewState.IdRef>
                         </If>
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Origin'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                          <ui:Click.CursorPosition>
-                            <ui:CursorPosition Position="Center">
-                              <ui:CursorPosition.OffsetX>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetX>
-                              <ui:CursorPosition.OffsetY>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetY>
-                            </ui:CursorPosition>
-                          </ui:Click.CursorPosition>
-                          <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="509d7a64a554142cbdfe3786d33fbe85" Selector="&lt;webctrl parentid='id_origin_chosen' tag='A' /&gt;" WaitForReady="COMPLETE" />
-                          </ui:Click.Target>
-                          <sap2010:WorkflowViewState.IdRef>Click_31</sap2010:WorkflowViewState.IdRef>
-                        </ui:Click>
-                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Origin'" EmptyField="True" SendWindowMessages="False" SimulateType="False" Text="[row(1).ToString + &quot;[k(enter)]&quot;]">
-                          <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3129b598fbfbfbdf90f8aa9735d5dc7f" Selector="&lt;webctrl parentid='id_origin_chosen' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE" />
-                          </ui:TypeInto.Target>
-                          <sap2010:WorkflowViewState.IdRef>TypeInto_18</sap2010:WorkflowViewState.IdRef>
-                        </ui:TypeInto>
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Destination'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                          <ui:Click.CursorPosition>
-                            <ui:CursorPosition Position="Center">
-                              <ui:CursorPosition.OffsetX>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetX>
-                              <ui:CursorPosition.OffsetY>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetY>
-                            </ui:CursorPosition>
-                          </ui:Click.CursorPosition>
-                          <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="509d7a64a554142cbdfe3786d33fbe85" Selector="&lt;webctrl parentid='id_destination_chosen' tag='A' /&gt;" WaitForReady="COMPLETE" />
-                          </ui:Click.Target>
-                          <sap2010:WorkflowViewState.IdRef>Click_32</sap2010:WorkflowViewState.IdRef>
-                        </ui:Click>
-                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Destination'" EmptyField="True" SendWindowMessages="False" SimulateType="False" Text="[row(2).ToString + &quot;[k(enter)]&quot;]">
-                          <ui:TypeInto.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8317b7280b7897a99c5ac2b936e7f4e9" Selector="&lt;webctrl parentid='id_destination_chosen' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE" />
-                          </ui:TypeInto.Target>
-                          <sap2010:WorkflowViewState.IdRef>TypeInto_19</sap2010:WorkflowViewState.IdRef>
-                        </ui:TypeInto>
-                        <If Condition="[row(4).ToString.Equals(&quot;-&quot;)]" DisplayName="Transition">
-                          <If.Else>
-                            <Sequence>
-                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'B'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                                <ui:Click.CursorPosition>
-                                  <ui:CursorPosition Position="Center">
-                                    <ui:CursorPosition.OffsetX>
-                                      <InArgument x:TypeArguments="x:Int32" />
-                                    </ui:CursorPosition.OffsetX>
-                                    <ui:CursorPosition.OffsetY>
-                                      <InArgument x:TypeArguments="x:Int32" />
-                                    </ui:CursorPosition.OffsetY>
-                                  </ui:CursorPosition>
-                                </ui:Click.CursorPosition>
-                                <ui:Click.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9baf72fe15177f98cd50fec69fb7c60d" Selector="&lt;webctrl parentid='id_transfer_chosen' tag='B' /&gt;" WaitForReady="COMPLETE" />
-                                </ui:Click.Target>
-                                <sap2010:WorkflowViewState.IdRef>Click_33</sap2010:WorkflowViewState.IdRef>
-                              </ui:Click>
-                              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT'" EmptyField="True" SendWindowMessages="False" SimulateType="False" Text="[row(4).ToString + &quot;[k(enter)]&quot;]">
-                                <ui:TypeInto.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="620ef55f669e796af1c844b4d751dfd6" Selector="&lt;webctrl parentid='id_transfer_chosen' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE" />
-                                </ui:TypeInto.Target>
-                                <sap2010:WorkflowViewState.IdRef>TypeInto_20</sap2010:WorkflowViewState.IdRef>
-                              </ui:TypeInto>
-                              <sap2010:WorkflowViewState.IdRef>Sequence_34</sap2010:WorkflowViewState.IdRef>
-                            </Sequence>
-                          </If.Else>
-                          <sap2010:WorkflowViewState.IdRef>If_11</sap2010:WorkflowViewState.IdRef>
-                        </If>
-                        <Switch x:TypeArguments="x:String" DisplayName="SwitchStatus" Expression="[row(5).ToString]">
+                        <Switch x:TypeArguments="x:String" DisplayName="SwitchStatus" Expression="[row(5).ToString]" sap2010:WorkflowViewState.IdRef="Switch`1_3">
                           <Switch.Default>
-                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_1'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_1'" sap2010:WorkflowViewState.IdRef="Click_34" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -265,10 +186,9 @@
                               <ui:Click.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="93a1d3bcc2b247ba72fc0181849e4d2a" Selector="&lt;webctrl id='memberStatus_1' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
                               </ui:Click.Target>
-                              <sap2010:WorkflowViewState.IdRef>Click_34</sap2010:WorkflowViewState.IdRef>
                             </ui:Click>
                           </Switch.Default>
-                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" x:Key="Серебряный" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_2'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" x:Key="Серебряный" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_2'" sap2010:WorkflowViewState.IdRef="Click_35" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -282,9 +202,8 @@
                             <ui:Click.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="389a6de9f67ded489b4e1680448d01c5" Selector="&lt;webctrl id='memberStatus_2' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
                             </ui:Click.Target>
-                            <sap2010:WorkflowViewState.IdRef>Click_35</sap2010:WorkflowViewState.IdRef>
                           </ui:Click>
-                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" x:Key="Золотой" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_3'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" x:Key="Золотой" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_3'" sap2010:WorkflowViewState.IdRef="Click_36" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -298,9 +217,8 @@
                             <ui:Click.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c0ce36c69fe1fef837fd1e334a1a8e6e" Selector="&lt;webctrl id='memberStatus_3' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
                             </ui:Click.Target>
-                            <sap2010:WorkflowViewState.IdRef>Click_36</sap2010:WorkflowViewState.IdRef>
                           </ui:Click>
-                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" x:Key="Платиновый" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_4'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" x:Key="Платиновый" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  memberStatus_4'" sap2010:WorkflowViewState.IdRef="Click_37" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -314,76 +232,133 @@
                             <ui:Click.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f5603af8b9f03ec18aa883810f1d32fd" Selector="&lt;webctrl id='memberStatus_4' tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
                             </ui:Click.Target>
-                            <sap2010:WorkflowViewState.IdRef>Click_37</sap2010:WorkflowViewState.IdRef>
                           </ui:Click>
-                          <sap2010:WorkflowViewState.IdRef>Switch`1_3</sap2010:WorkflowViewState.IdRef>
                         </Switch>
-                        <sap2010:WorkflowViewState.IdRef>Sequence_35</sap2010:WorkflowViewState.IdRef>
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Origin'" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="509d7a64a554142cbdfe3786d33fbe85" Selector="&lt;webctrl parentid='id_origin_chosen' tag='A' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Origin'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_18" SendWindowMessages="False" SimulateType="False" Text="[row(1).ToString + &quot;[k(enter)]&quot;]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3129b598fbfbfbdf90f8aa9735d5dc7f" Selector="&lt;webctrl parentid='id_origin_chosen' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:TypeInto.Target>
+                        </ui:TypeInto>
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Destination'" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="509d7a64a554142cbdfe3786d33fbe85" Selector="&lt;webctrl parentid='id_destination_chosen' tag='A' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Destination'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_19" SendWindowMessages="False" SimulateType="False" Text="[row(2).ToString + &quot;[k(enter)]&quot;]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8317b7280b7897a99c5ac2b936e7f4e9" Selector="&lt;webctrl parentid='id_destination_chosen' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:TypeInto.Target>
+                        </ui:TypeInto>
+                        <If Condition="[row(4).ToString.Equals(&quot;-&quot;)]" DisplayName="Transition" sap2010:WorkflowViewState.IdRef="If_11">
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'B'" sap2010:WorkflowViewState.IdRef="Click_33" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9baf72fe15177f98cd50fec69fb7c60d" Selector="&lt;webctrl parentid='id_transfer_chosen' tag='B' /&gt;" WaitForReady="COMPLETE" />
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_20" SendWindowMessages="False" SimulateType="False" Text="[row(4).ToString + &quot;[k(enter)]&quot;]">
+                                <ui:TypeInto.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="620ef55f669e796af1c844b4d751dfd6" Selector="&lt;webctrl parentid='id_transfer_chosen' tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE" />
+                                </ui:TypeInto.Target>
+                              </ui:TypeInto>
+                            </Sequence>
+                          </If.Else>
+                        </If>
                       </Sequence>
-                      <Sequence DisplayName="ValidationsCells">
+                      <Sequence DisplayName="ValidationsCells" sap2010:WorkflowViewState.IdRef="Sequence_39">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="isOrigin" />
                           <Variable x:TypeArguments="x:Boolean" Name="isDestination" />
                           <Variable x:TypeArguments="x:Boolean" Name="isPrefix" />
                           <Variable x:TypeArguments="ui:GenericValue" Name="textboxValue" />
                         </Sequence.Variables>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text of Origin">
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text of Origin" sap2010:WorkflowViewState.IdRef="GetValue_3">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl parentid='id_origin_chosen' tag='SPAN' /&gt;" WaitForReady="COMPLETE" />
                           </ui:GetValue.Target>
                           <ui:GetValue.Value>
                             <OutArgument x:TypeArguments="ui:GenericValue">[textboxValue]</OutArgument>
                           </ui:GetValue.Value>
-                          <sap2010:WorkflowViewState.IdRef>GetValue_3</sap2010:WorkflowViewState.IdRef>
                         </ui:GetValue>
-                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim e, c As Boolean&#xA;e = String.IsNullOrEmpty(textboxValue)&#xA;c = Not textboxValue.Contains(input)&#xA;result = e or c" DisplayName="Checking the origin textbox">
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim e, c As Boolean&#xA;e = String.IsNullOrEmpty(textboxValue)&#xA;c = Not textboxValue.Contains(input)&#xA;result = e or c" DisplayName="Checking the origin textbox" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
                           <ui:InvokeCode.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="input">[row(1).ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="textboxValue">[textboxValue]</InArgument>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="result">[isOrigin]</OutArgument>
                           </ui:InvokeCode.Arguments>
-                          <sap2010:WorkflowViewState.IdRef>InvokeCode_3</sap2010:WorkflowViewState.IdRef>
                         </ui:InvokeCode>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text of Destination">
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text of Destination" sap2010:WorkflowViewState.IdRef="GetValue_4">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl parentid='id_destination_chosen' tag='SPAN' /&gt;" WaitForReady="COMPLETE" />
                           </ui:GetValue.Target>
                           <ui:GetValue.Value>
                             <OutArgument x:TypeArguments="ui:GenericValue">[textboxValue]</OutArgument>
                           </ui:GetValue.Value>
-                          <sap2010:WorkflowViewState.IdRef>GetValue_4</sap2010:WorkflowViewState.IdRef>
                         </ui:GetValue>
-                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim e, c As Boolean&#xA;e = String.IsNullOrEmpty(textboxValue)&#xA;c = Not textboxValue.Contains(input)&#xA;result = e or c" DisplayName="Checking the destination textbox">
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim e, c As Boolean&#xA;e = String.IsNullOrEmpty(textboxValue)&#xA;c = Not textboxValue.Contains(input)&#xA;result = e or c" DisplayName="Checking the destination textbox" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
                           <ui:InvokeCode.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="input">[row(2).ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="textboxValue">[textboxValue]</InArgument>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="result">[isDestination]</OutArgument>
                           </ui:InvokeCode.Arguments>
-                          <sap2010:WorkflowViewState.IdRef>InvokeCode_4</sap2010:WorkflowViewState.IdRef>
                         </ui:InvokeCode>
-                        <Assign>
+                        <Assign sap2010:WorkflowViewState.IdRef="Assign_24">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[isPrefix]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
                             <InArgument x:TypeArguments="x:Boolean">[String.IsNullOrEmpty(row(6).ToString)]</InArgument>
                           </Assign.Value>
-                          <sap2010:WorkflowViewState.IdRef>Assign_24</sap2010:WorkflowViewState.IdRef>
                         </Assign>
-                        <If Condition="[isOrigin or isDestination or isPrefix]" DisplayName="Checking if empty">
+                        <If Condition="[isOrigin or isDestination or isPrefix]" DisplayName="Checking if empty" sap2010:WorkflowViewState.IdRef="If_12">
                           <If.Then>
-                            <Sequence>
-                              <WriteLine DisplayName="Write Line" Text="Everything is not Ok" sap2010:WorkflowViewState.IdRef="WriteLine_12" />
-                              <Assign>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_36">
+                              <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="Everything is not Ok" />
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_25">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">[row(9)]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:Object">["Неверные входные данные"]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_25</sap2010:WorkflowViewState.IdRef>
                               </Assign>
-                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Очищаем введенные данные, чтобы избежать нерелевантных табличных значений от предыдущих запросов" ClickType="CLICK_SINGLE" DisplayName="Click 'Очистить данные'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Очищаем введенные данные, чтобы избежать нерелевантных табличных значений от предыдущих запросов" ClickType="CLICK_SINGLE" DisplayName="Click 'Очистить данные'" sap2010:WorkflowViewState.IdRef="Click_38" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -397,67 +372,56 @@
                                 <ui:Click.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6e2912c8a01d6c8205b2a5b04cc954bb" Selector="&lt;webctrl id='resetButton' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                                 </ui:Click.Target>
-                                <sap2010:WorkflowViewState.IdRef>Click_38</sap2010:WorkflowViewState.IdRef>
                               </ui:Click>
                               <ui:Continue sap2010:WorkflowViewState.IdRef="Continue_2" />
-                              <sap2010:WorkflowViewState.IdRef>Sequence_36</sap2010:WorkflowViewState.IdRef>
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <WriteLine DisplayName="Write Line" Text="Everything is ok" sap2010:WorkflowViewState.IdRef="WriteLine_13" />
+                            <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="Everything is ok" />
                           </If.Else>
-                          <sap2010:WorkflowViewState.IdRef>If_12</sap2010:WorkflowViewState.IdRef>
                         </If>
-                        <Sequence DisplayName="WaitingForTable">
+                        <Sequence DisplayName="WaitingForTable" sap2010:WorkflowViewState.IdRef="Sequence_38">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="toWait" />
                           </Sequence.Variables>
-                          <Assign>
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_26">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[toWait]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                             </Assign.Value>
-                            <sap2010:WorkflowViewState.IdRef>Assign_26</sap2010:WorkflowViewState.IdRef>
                           </Assign>
-                          <While Condition="[toWait]">
-                            <Sequence>
+                          <While sap2010:WorkflowViewState.IdRef="While_2" Condition="[toWait]">
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_37">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="attValue" />
                               </Sequence.Variables>
-                              <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script" ScriptCode="&#xA;function f()&#xA;{&#xA;return document.getElementById('staticTableError').getAttribute('style');&#xA;}&#xA;">
+                              <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script" sap2010:WorkflowViewState.IdRef="InjectJsScript_2" ScriptCode="&#xA;function f()&#xA;{&#xA;return document.getElementById('staticTableError').getAttribute('style');&#xA;}&#xA;">
                                 <ui:InjectJsScript.ScriptOutput>
                                   <OutArgument x:TypeArguments="x:String">[attValue]</OutArgument>
                                 </ui:InjectJsScript.ScriptOutput>
                                 <ui:InjectJsScript.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                                 </ui:InjectJsScript.Target>
-                                <sap2010:WorkflowViewState.IdRef>InjectJsScript_2</sap2010:WorkflowViewState.IdRef>
                               </ui:InjectJsScript>
-                              <If Condition="[attValue.Equals(&quot;display: none;&quot;)]">
+                              <If Condition="[attValue.Equals(&quot;display: none;&quot;)]" sap2010:WorkflowViewState.IdRef="If_13">
                                 <If.Then>
-                                  <Assign>
+                                  <Assign sap2010:WorkflowViewState.IdRef="Assign_27">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Boolean">[toWait]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                     </Assign.Value>
-                                    <sap2010:WorkflowViewState.IdRef>Assign_27</sap2010:WorkflowViewState.IdRef>
                                   </Assign>
                                 </If.Then>
-                                <sap2010:WorkflowViewState.IdRef>If_13</sap2010:WorkflowViewState.IdRef>
                               </If>
-                              <sap2010:WorkflowViewState.IdRef>Sequence_37</sap2010:WorkflowViewState.IdRef>
                             </Sequence>
-                            <sap2010:WorkflowViewState.IdRef>While_2</sap2010:WorkflowViewState.IdRef>
                           </While>
-                          <sap2010:WorkflowViewState.IdRef>Sequence_38</sap2010:WorkflowViewState.IdRef>
                         </Sequence>
-                        <sap2010:WorkflowViewState.IdRef>Sequence_39</sap2010:WorkflowViewState.IdRef>
                       </Sequence>
-                      <Sequence DisplayName="GettingResults">
+                      <Sequence DisplayName="GettingResults" sap2010:WorkflowViewState.IdRef="Sequence_43">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="temp" />
                           <Variable x:TypeArguments="ui:UiElement" Name="table" />
@@ -466,131 +430,114 @@
                           <Variable x:TypeArguments="x:Boolean" Name="equalness" />
                           <Variable x:TypeArguments="x:Boolean" Name="emptyness" />
                         </Sequence.Variables>
-                        <WriteLine DisplayName="Write Line" Text="[&quot;Start: Getting value&quot; + System.DateTime.Now.ToLongTimeString]" sap2010:WorkflowViewState.IdRef="WriteLine_14" />
-                        <Sequence DisplayName="GettingValue">
-                          <Assign>
+                        <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="[&quot;Start: Getting value&quot; + System.DateTime.Now.ToLongTimeString]" />
+                        <Sequence DisplayName="GettingValue" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_28">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[prefix]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:String">[row(6).ToString]</InArgument>
                             </Assign.Value>
-                            <sap2010:WorkflowViewState.IdRef>Assign_28</sap2010:WorkflowViewState.IdRef>
                           </Assign>
-                          <ui:WaitUiElementAppear DisplayName="Find Table with values" FoundElement="[table]" WaitActive="False" WaitVisible="False">
+                          <ui:WaitUiElementAppear DisplayName="Find Table with values" FoundElement="[table]" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5" WaitActive="False" WaitVisible="False">
                             <ui:WaitUiElementAppear.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl id='faresStaticTable' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
                             </ui:WaitUiElementAppear.Target>
-                            <sap2010:WorkflowViewState.IdRef>WaitUiElementAppear_5</sap2010:WorkflowViewState.IdRef>
                           </ui:WaitUiElementAppear>
-                          <Assign DisplayName="Assign Split text by &quot;Prefix&quot;">
+                          <Assign DisplayName="Assign Split text by &quot;Prefix&quot;" sap2010:WorkflowViewState.IdRef="Assign_29">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[temp]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:String">[table.Get("aaname").ToString.Split({prefix}, StringSplitOptions.None)(1)]</InArgument>
                             </Assign.Value>
-                            <sap2010:WorkflowViewState.IdRef>Assign_29</sap2010:WorkflowViewState.IdRef>
                           </Assign>
-                          <ui:Matches DisplayName="Getting the first result" Input="[temp]" Pattern="[0-9]+" RegexOption="IgnoreCase, Compiled" Result="[nums]" sap2010:WorkflowViewState.IdRef="Matches_3" />
-                          <sap2010:WorkflowViewState.IdRef>Sequence_40</sap2010:WorkflowViewState.IdRef>
+                          <ui:Matches DisplayName="Getting the first result" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[temp]" Pattern="[0-9]+" RegexOption="IgnoreCase, Compiled" Result="[nums]" />
                         </Sequence>
-                        <Sequence DisplayName="CheckingInputs">
-                          <Assign>
+                        <Sequence DisplayName="CheckingInputs" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_30">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[equalness]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:Boolean">[row(7).ToString.Equals(nums(0).ToString)]</InArgument>
                             </Assign.Value>
-                            <sap2010:WorkflowViewState.IdRef>Assign_30</sap2010:WorkflowViewState.IdRef>
                           </Assign>
-                          <Assign>
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_31">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[emptyness]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:Boolean">[String.IsNullOrEmpty(row(7).ToString)]</InArgument>
                             </Assign.Value>
-                            <sap2010:WorkflowViewState.IdRef>Assign_31</sap2010:WorkflowViewState.IdRef>
                           </Assign>
-                          <If sap2010:Annotation.AnnotationText="If there is a mistake in the input data, it will be corrected by next validation's step." Condition="[equalness]" DisplayName="WritingStatus">
+                          <If sap2010:Annotation.AnnotationText="If there is a mistake in the input data, it will be corrected by next validation's step." Condition="[equalness]" DisplayName="WritingStatus" sap2010:WorkflowViewState.IdRef="If_14">
                             <If.Then>
-                              <Assign>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_32">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">[row(9)]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:Object">["Сверка пройдена"]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_32</sap2010:WorkflowViewState.IdRef>
                               </Assign>
                             </If.Then>
                             <If.Else>
-                              <Assign>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_33">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">[row(9)]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:Object">["Добавленно значение"]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_33</sap2010:WorkflowViewState.IdRef>
                               </Assign>
                             </If.Else>
-                            <sap2010:WorkflowViewState.IdRef>If_14</sap2010:WorkflowViewState.IdRef>
                           </If>
-                          <If Condition="[equalness or emptyness]" DisplayName="CheckingMiles">
+                          <If Condition="[equalness or emptyness]" DisplayName="CheckingMiles" sap2010:WorkflowViewState.IdRef="If_15">
                             <If.Then>
-                              <Assign>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_34">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">[row(8)]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:Object">[TRUE]</InArgument>
                                 </Assign.Value>
-                                <sap2010:WorkflowViewState.IdRef>Assign_34</sap2010:WorkflowViewState.IdRef>
                               </Assign>
                             </If.Then>
                             <If.Else>
-                              <Sequence>
-                                <Assign>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_35">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Object">[row(8)]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
                                     <InArgument x:TypeArguments="x:Object">[FALSE]</InArgument>
                                   </Assign.Value>
-                                  <sap2010:WorkflowViewState.IdRef>Assign_35</sap2010:WorkflowViewState.IdRef>
                                 </Assign>
-                                <Assign>
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_36">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Object">[row(9)]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
                                     <InArgument x:TypeArguments="x:Object">["Выявлено расхождение"]</InArgument>
                                   </Assign.Value>
-                                  <sap2010:WorkflowViewState.IdRef>Assign_36</sap2010:WorkflowViewState.IdRef>
                                 </Assign>
-                                <sap2010:WorkflowViewState.IdRef>Sequence_41</sap2010:WorkflowViewState.IdRef>
                               </Sequence>
                             </If.Else>
-                            <sap2010:WorkflowViewState.IdRef>If_15</sap2010:WorkflowViewState.IdRef>
                           </If>
-                          <sap2010:WorkflowViewState.IdRef>Sequence_42</sap2010:WorkflowViewState.IdRef>
                         </Sequence>
-                        <Assign>
+                        <Assign sap2010:WorkflowViewState.IdRef="Assign_37">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Object">[row(7)]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
                             <InArgument x:TypeArguments="x:Object">[nums(0)]</InArgument>
                           </Assign.Value>
-                          <sap2010:WorkflowViewState.IdRef>Assign_37</sap2010:WorkflowViewState.IdRef>
                         </Assign>
-                        <WriteLine DisplayName="Write Line" Text="[&quot;End: Getting value&quot; + System.DateTime.Now.ToLongTimeString]" sap2010:WorkflowViewState.IdRef="WriteLine_15" />
-                        <sap2010:WorkflowViewState.IdRef>Sequence_43</sap2010:WorkflowViewState.IdRef>
+                        <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[&quot;End: Getting value&quot; + System.DateTime.Now.ToLongTimeString]" />
                       </Sequence>
-                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Очищаем введенные данные, чтобы избежать нерелевантных табличных значений от предыдущих запросов" ClickType="CLICK_SINGLE" DisplayName="Click 'Очистить данные'" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Очищаем введенные данные, чтобы избежать нерелевантных табличных значений от предыдущих запросов" ClickType="CLICK_SINGLE" DisplayName="Click 'Очистить данные'" sap2010:WorkflowViewState.IdRef="Click_39" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -604,9 +551,7 @@
                         <ui:Click.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6e2912c8a01d6c8205b2a5b04cc954bb" Selector="&lt;webctrl id='resetButton' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                         </ui:Click.Target>
-                        <sap2010:WorkflowViewState.IdRef>Click_39</sap2010:WorkflowViewState.IdRef>
                       </ui:Click>
-                      <sap2010:WorkflowViewState.IdRef>Sequence_44</sap2010:WorkflowViewState.IdRef>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
@@ -693,7 +638,7 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dytcXE1hY1xIb21lXERvd25sb2Fkc1xQd0MtQWVyb2Zsb3RcTWFpbi54YW1s4gFEA4IFDgIBAUkFYhADAfEBYwW0BBACAUC1BAWABRACAQJNB02qAgMBiwJOB07UAQMBiAJPB0+YAQMBhQJQB2EiAwHyAWQHZKcCAwHtAWUHZbACAwHpAWYHswQYAgFBuQQHvQQYAgE7vgQHvgTFAQIBN78EB/8EIgIBA01DTVsDAY0CTaoBTZgCAwGMAk5DTlsDAYoCTqoBTsIBAwGJAk+JAU+VAQMBhgJQsQFQvQEDAYMCVg1eGAMB8wFkkgFkmgEDAfABZKUBZKwBAwHuAWWSAWWeAQMB7AFlqQFlsAEDAeoBZrwBZogCAwHoAWwNsAQYAgFCuQSOAbkEvwECAT+7BDq7BEMCAT25BMYBuQTeAQIBPL4EO74EWgIBOr4EtgG+BMIBAgE4vwSiAb8EwQECATbFBA38BBgCAQRaD1rOAQMB/gFbD1u/AQMB+AFcD1y2AQMB9gFdD12wAQMB9AFtD64EHwIBRK8ED68EdgIBQ8kED9AEGAIBMtEED9EEygECAS7SBA/SBJ4BAgEq0wQP+gQfAgEG+wQP+wR5AgEFWpEBWp8BAwGBAlrAAVrLAQMBgAJaqgFatQEDAf8BWz5bRQMB/AFbmAFbpgEDAfoBW7EBW7wBAwH5AVxmXLMBAwH3AV1mXa0BAwH1AW1AbUcDAeYBcxWrBCACAUXOBEHOBEQCATXLBELLBE4CATPRBK4B0QSxAQIBMdEEoQHRBKQBAgEw0QS8AdEExwECAS/SBCfSBCsCAS3SBJMB0gSbAQIBLNIEggHSBI0BAgEr0wRA0wRHAgEo2QQV9wQgAgEHdBevAiIDAb4BsAIXpwMiAwGDAagDF5sEIgIBSJwEF6oEIgIBRt0EF90E2gECASTeBBflBCACASDmBBfmBMIBAgEb5wQX7gQcAgEN7wQX9gQgAgEIdRmDASQDAeQBhAEZiAEnAwHhAYkBGawBHgMB2wGtARnsASIDAdEB7QEZ+wEkAwHPAfwBGYACJwMBzAGBAhmPAiQDAcoBkAIZlAInAwHHAZUCGa4CHgMBvwG3Ahm+AicDAboBvwIZxQIpAwG1AcYCGc0CJwMBsQHOAhnUAikDAawB1QIZ3AIiAwGoAd0CGf4CHgMBmAH/AhmmAyQDAYQBsQMZsQO/AQMBgQGyAxnJAyQCAW7KAxmRBCQCAU6SBBmZBCICAUuaBBmaBL0BAgFJqASqAagE2wECAUfdBC/dBFYCASfdBMQB3QTXAQIBJt0EswHdBL4BAgEl4wRC4wRdAgEj4ARD4ARPAgEh5gQv5gQ9AgEe5gSsAeYEvwECAR3mBJsB5gSmAQIBHOcEJecEPAIBDukEG+kE8wECARXsBBvsBPEBAgEP9ARJ9ARZAgEL8QRK8QRWAgEJgQGsAYEB6AEDAeUBhgGsAYYB9QEDAeMBhAGsAoQB3wIDAeIBiQEniQFRAwHcAYsBHZkBKAMB3wGcAR2qASgDAd0BrQFirQF1AwHSAb8BG80BJgMB2QHOARvcASYDAdcB3QEb6wEmAwHVAa8BHb0BKAMB0wH5AawB+QHjAQMB0AH+AawB/gHzAQMBzgH8AasC/AHXAgMBzQGNAqwBjQLoAQMBywGSAqwBkgL4AQMByQGQArACkALcAgMByAGVAieVAlADAcABlwIdrAIoAwHBAbwCTLwCWgMBuwG5AnO5Aq0BAwG9AcECUsECYwMBuQHCAlnCAmcDAbgBwwJVwwJfAwG2AcsCTMsCWgMBsgHIAnPIArIBAwG0AdACUtACYwMBsAHRAlnRAmcDAa8B0gJV0gJkAwGtAdoCRdoCbAMBqwHXAkbXAlADAakB3QIn3QJQAwGZAd8CHfkCKAMBnwH8Ah38AooBAwGdAYMDG4oDJAMBlAGLAxulAyMDAYUBsQNxsQO8AQMBggGzAxu6AyQCAX27Axu/AzQCAXnAAxvHAyQCAXXIAxvIA88BAgFvywMb0gMkAgFq0wMb2gMkAgFm2wMb8AMgAgFd8QMbkAQgAgFPlwRElwRNAgFNlARFlARNAgFMmgRxmgS6AQIBSukEOOkEVgIBGukEsgHpBNoBAgEX6QTlAekE8AECARbsBDjsBFQCARTsBLAB7ATYAQIBEewE4wHsBO4BAgEQlwGwAZcB5QEDAeABqAGwAagB5QEDAd4BywGuAcsB4gEDAdoB2gGuAdoB4gEDAdgB6QGuAekB4gEDAdYBuwGwAbsB5AEDAdQBmAIfpgIqAwHFAacCH6sCLQMBwgHgAh/gApABAwGmAeECH+gCKAMBowHpAh/3AioDAaEB+AIf+AJbAwGgAfwCdfwChwEDAZ4BiANHiANLAwGXAYUDSIUDUAMBlQGMAx2kAygDAYgBiwNWiwNgAwGGAbgDRrgDVwMBgAG1A0e1A08CAX67A2W7A24CAXu9A3W9A6gBAgF6xQNGxQOQAQIBeMIDR8IDTQIBdsgDgAHIA4gBAgFzyAPEAcgDzAECAXHIA5EByAOZAQIBcNADR9ADcQIBbc0DSM0DUwIBa9gDR9gDbgIBadUDSNUDUwIBZ9sDpgHbA7MBAgFe3QMf5AMoAgFj5wMf7gMoAgFg8QMp8QNDAgFQ8wMf+gMoAgFa/QMfjgQqAgFTpAKyAaQC6wEDAcYBqQKyAakC+wEDAcQBpwKwAqcC3AIDAcMB4AJ34AKNAQMBpwHmAkrmAmUDAaUB4wJL4wJTAwGkAfUCsgH1AuMBAwGiAZADH5cDMwMBkAGYAx+jAyQDAYkB4gNK4gNdAgFl3wNL3wNTAgFk7ANK7ANhAgFi6QNL6QNTAgFh+ANK+ANQAgFc9QNL9QNTAgFb/gMhhQQqAgFXhgQhjQQqAgFUkgNLkgNVAwGSAZADqQGQA5sCAwGRAZgDLZgDXAMBigGaAyOhAywDAYwBgwRMgwRTAgFZgARNgARVAgFYiwRMiwRkAgFWiARNiARVAgFVnwNPnwNUAwGPAZwDUJwDWAMBjQE=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -755,6 +700,18 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Click_34" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_35" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_36" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Click_37" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Switch`1_3" sap:VirtualizedContainerService.HintSize="200,52">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="Click_31" sap:VirtualizedContainerService.HintSize="200,52">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -804,19 +761,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Click_34" sap:VirtualizedContainerService.HintSize="314,106" />
-      <sap2010:ViewStateData Id="Click_35" sap:VirtualizedContainerService.HintSize="314,106" />
-      <sap2010:ViewStateData Id="Click_36" sap:VirtualizedContainerService.HintSize="314,106" />
-      <sap2010:ViewStateData Id="Click_37" sap:VirtualizedContainerService.HintSize="314,106" />
-      <sap2010:ViewStateData Id="Switch`1_3" sap:VirtualizedContainerService.HintSize="200,52">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_35" sap:VirtualizedContainerService.HintSize="200,52">
+      <sap2010:ViewStateData Id="Sequence_35" sap:VirtualizedContainerService.HintSize="222,912">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -965,7 +910,7 @@
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="Assign_37" sap:VirtualizedContainerService.HintSize="242,60" />
       <sap2010:ViewStateData Id="WriteLine_15" sap:VirtualizedContainerService.HintSize="242,62" />
-      <sap2010:ViewStateData Id="Sequence_43" sap:VirtualizedContainerService.HintSize="264,572">
+      <sap2010:ViewStateData Id="Sequence_43" sap:VirtualizedContainerService.HintSize="200,52">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1006,7 +951,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="OpenBrowser_3" sap:VirtualizedContainerService.HintSize="200,52" />
+      <sap2010:ViewStateData Id="OpenBrowser_3" sap:VirtualizedContainerService.HintSize="414,151" />
       <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="222,300">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1067,7 +1012,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="262,440">
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="262,480">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
