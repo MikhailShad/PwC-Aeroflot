@@ -86,8 +86,8 @@
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="tablerange" />
               </Sequence.Variables>
-              <ui:ExcelGetTableRange DisplayName="Get Table Range" sap2010:WorkflowViewState.IdRef="ExcelGetTableRange_1" IsPivot="False" Range="[tablerange]" SheetName="Params" TableName="InputData" />
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[DT1]" DisplayName="Read Range" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" Range="[tablerange]" SheetName="Params" />
+              <ui:ExcelGetTableRange DisplayName="Get Table Range" sap2010:WorkflowViewState.IdRef="ExcelGetTableRange_1" IsPivot="False" Range="[tablerange]" SheetName="Параметры" TableName="InputData" />
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[DT1]" DisplayName="Read Range" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" Range="[tablerange]" SheetName="Параметры" />
               <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;There are &quot; + DT1.Columns.Count.ToString + &quot;columns&quot;]" />
               <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;There are &quot; + DT1.Rows.Count.ToString + &quot;rows&quot;]" />
             </Sequence>
@@ -95,7 +95,7 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence DisplayName="DataProcess" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="StDataProcess" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <ui:AddDataColumn x:TypeArguments="x:Object" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="Checks" DataTable="[DT1]" DisplayName="Add Data Column Status" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="100" Unique="False" />
       <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="True" Private="True" Url="https://www.aeroflot.ru/ikm/?_preferredLocale=ru&amp;_preferredLanguage=ru">
         <ui:OpenBrowser.Body>
@@ -483,7 +483,7 @@
         </ui:OpenBrowser.Body>
       </ui:OpenBrowser>
     </Sequence>
-    <Sequence DisplayName="Outputting results" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="StWriteResultData" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:GenericValue" Name="resPath" />
       </Sequence.Variables>
@@ -559,7 +559,7 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -815,11 +815,11 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="OpenBrowser_3" sap:VirtualizedContainerService.HintSize="765.6,6729.6" />
-      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="788,6916.8">
+      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -859,15 +859,15 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="ExcelApplicationScope_4" sap:VirtualizedContainerService.HintSize="553.6,1526.4" />
-      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="788,1846.4">
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="810.4,9020.8">
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="222.4,363.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
