@@ -65,31 +65,36 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence DisplayName="GlobalMain" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT1" />
       <Variable x:TypeArguments="x:String" Name="filepath" />
     </Sequence.Variables>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="Выберите исходный файл" TopMost="True" />
-    <ui:SelectFile DisplayName="Select File" Filter="All files (*.*)|*.*" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[filepath]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Getting Data From Excel" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="[filepath]">
-      <ui:ExcelApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_9">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="tablerange" />
-            </Sequence.Variables>
-            <ui:ExcelGetTableRange DisplayName="Get Table Range" sap2010:WorkflowViewState.IdRef="ExcelGetTableRange_1" IsPivot="False" Range="[tablerange]" SheetName="Sheet1" TableName="InputData" />
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[DT1]" DisplayName="Read Range" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" Range="[tablerange]" SheetName="Sheet1" />
-            <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;There are &quot; + DT1.Columns.Count.ToString + &quot;columns&quot;]" />
-            <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;There are &quot; + DT1.Rows.Count.ToString + &quot;rows&quot;]" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ExcelApplicationScope.Body>
-    </ui:ExcelApplicationScope>
+    <Sequence DisplayName="StReadConfiguration" sap2010:WorkflowViewState.IdRef="Sequence_29">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="InputData" />
+      </Sequence.Variables>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="Выберите исходный файл" TopMost="True" />
+      <ui:SelectFile DisplayName="Select File" Filter="All files (*.*)|*.*" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[filepath]" />
+      <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="GetDataFromExcel" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="[filepath]">
+        <ui:ExcelApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="DoReadInputExcelTable" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="tablerange" />
+              </Sequence.Variables>
+              <ui:ExcelGetTableRange DisplayName="Get Table Range" sap2010:WorkflowViewState.IdRef="ExcelGetTableRange_1" IsPivot="False" Range="[tablerange]" SheetName="Params" TableName="InputData" />
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[DT1]" DisplayName="Read Range" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" Range="[tablerange]" SheetName="Params" />
+              <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;There are &quot; + DT1.Columns.Count.ToString + &quot;columns&quot;]" />
+              <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;There are &quot; + DT1.Rows.Count.ToString + &quot;rows&quot;]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ExcelApplicationScope.Body>
+      </ui:ExcelApplicationScope>
+    </Sequence>
     <Sequence DisplayName="DataProcess" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <ui:AddDataColumn x:TypeArguments="x:Object" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="Checks" DataTable="[DT1]" DisplayName="Add Data Column Status" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="100" Unique="False" />
       <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="True" Private="True" Url="https://www.aeroflot.ru/ikm/?_preferredLocale=ru&amp;_preferredLanguage=ru">
@@ -554,12 +559,12 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="788,60" />
-      <sap2010:ViewStateData Id="SelectFile_1" sap:VirtualizedContainerService.HintSize="788,22.4" />
+      <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="414.4,60" />
+      <sap2010:ViewStateData Id="SelectFile_1" sap:VirtualizedContainerService.HintSize="414.4,22.4" />
       <sap2010:ViewStateData Id="ExcelGetTableRange_1" sap:VirtualizedContainerService.HintSize="314.4,60" />
       <sap2010:ViewStateData Id="ExcelReadRange_3" sap:VirtualizedContainerService.HintSize="314.4,60" />
       <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="314.4,62.4" />
@@ -571,11 +576,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ExcelApplicationScope_3" sap:VirtualizedContainerService.HintSize="788,639.2">
+      <sap2010:ViewStateData Id="ExcelApplicationScope_3" sap:VirtualizedContainerService.HintSize="414.4,599.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="436.8,886.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -854,7 +867,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="810.4,9769.6">
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="810.4,9020.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -862,7 +875,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="850.4,9849.6">
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="850.4,9100.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
