@@ -3,3 +3,8 @@
 
 *.xlsx
 *.xls
+
+RbaAuditLibrary/.vs
+RbaAuditLibrary/RbaAuditLibrary/bin
+RbaAuditLibrary/RbaAuditLibrary/obj
+RbaAuditLibrary/packages
